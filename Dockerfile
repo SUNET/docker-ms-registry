@@ -16,6 +16,7 @@ RUN apt-get update && apt-get install -y \
 
 # Python deps (controlled from this repo)
 ADD requirements.txt requirements.txt
+RUN pip install --upgrade "pip>=26.2.2"
 RUN pip install -r requirements.txt && \
     pip install --no-binary pyuwsgi pyuwsgi
 
